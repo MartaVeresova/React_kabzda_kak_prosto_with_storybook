@@ -1,0 +1,28 @@
+.app {
+  display: flex;
+}
+
+.uncontrolled {
+  flex: 50%;
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.controlled {
+  flex: 50%;
+  width: 500px;
+  margin: 20px;
+  text-align: center;
+}
+
+.star img {
+  width: 5%;
+  margin: 1px;
+  padding-top: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
