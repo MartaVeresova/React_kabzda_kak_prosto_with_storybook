@@ -1,8 +1,11 @@
 import React from 'react';
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
+    /**
+     * Elements that are showed when accordion is opened (not collapsed)
+     */
     onChange: (collapsed: boolean) => void
 }
 

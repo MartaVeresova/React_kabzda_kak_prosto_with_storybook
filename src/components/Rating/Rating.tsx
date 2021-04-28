@@ -31,7 +31,7 @@ function Star(props: StarPropsType) {
 
     return (
         <span className='star' onClick={onClickValue}>
-            {props.selected ? <img src='https://pngimg.com/uploads/red_star/red_star_PNG31.png'/> : <img src='https://static.vecteezy.com/system/resources/previews/001/189/159/original/rainbow-star-png.png'/>}
+            {props.selected ? <img src='https://pngimg.com/uploads/red_star/red_star_PNG31.png' width={'5%'}/> : <img src='https://static.vecteezy.com/system/resources/previews/001/189/159/original/rainbow-star-png.png' width={'5%'}/>}
             {/*{props.selected ? <b>star </b> : 'star '}*/}
         </span>
     )
