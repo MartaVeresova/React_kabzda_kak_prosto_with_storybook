@@ -3,7 +3,7 @@ import './App.css';
 import {Rating, RatingValueType} from './components/Rating/Rating';
 import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
-import {Accordion} from './components/Accordion/ Accordion';
+import {Accordion, ItemsType} from './components/Accordion/ Accordion';
 import {OnOff} from './components/OnOff/OnOff';
 import {UncontrolledOnOff} from './components/UnconrolledOnOff/UncontrolledOnOff';
 
@@ -13,6 +13,7 @@ function App() {
     const [switchUncOn, setSwitchUncOn] = useState(false)
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    const [itemsValue, setItemsValue] = useState<ItemsType[]>([])
 
     return (
         <div className="app">
@@ -44,6 +45,8 @@ function App() {
                     onChange={() => {
                         setAccordionCollapsed(!accordionCollapsed)
                     }}
+                    items={itemsValue}
+                    onClick={() => {setItemsValue(itemsValue)}}
                 />
             </div>
         </div>

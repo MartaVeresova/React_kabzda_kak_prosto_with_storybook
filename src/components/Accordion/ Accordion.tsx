@@ -1,5 +1,9 @@
 import React, {MouseEvent} from 'react';
 
+export type ItemsType = {
+    title: string
+    value: any
+}
 
 export type AccordionPropsType = {
     titleValue: string
@@ -8,9 +12,8 @@ export type AccordionPropsType = {
      * Elements that are showed when accordion is opened (not collapsed)
      */
     onChange: () => void
-    /**
-     *
-     */
+    items: ItemsType[]
+    onClick: (value: any) => void
     color?: string
 }
 
@@ -23,7 +26,7 @@ export function Accordion(props: AccordionPropsType) {
                 onClick={props.onChange}
                 color={props.color}
             />
-            {!props.collapsed && <AccordionBody/>}
+            {!props.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
         </div>
     )
 }
@@ -51,12 +54,19 @@ function AccordionTitle(props: AccordionTitlePropsType) {
     )
 }
 
-function AccordionBody() {
+type AccordionBodyPropsType = {
+    items: ItemsType[]
+    onClick: (value: any) => void
+}
+
+function AccordionBody(props: AccordionBodyPropsType) {
     return (
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            {
+                props.items.map((i, index) => <li onClick={() => {
+                    props.onClick(i.value)
+                }} key={index}>{i.title}</li>)
+            }
         </ul>
     )
 }
