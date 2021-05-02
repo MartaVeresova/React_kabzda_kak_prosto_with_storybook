@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {MouseEvent} from 'react';
+
 
 export type AccordionPropsType = {
     titleValue: string
@@ -6,7 +7,11 @@ export type AccordionPropsType = {
     /**
      * Elements that are showed when accordion is opened (not collapsed)
      */
-    onChange: (collapsed: boolean) => void
+    onChange: () => void
+    /**
+     *
+     */
+    color?: string
 }
 
 export function Accordion(props: AccordionPropsType) {
@@ -16,6 +21,7 @@ export function Accordion(props: AccordionPropsType) {
                 title={props.titleValue}
                 collapsed={props.collapsed}
                 onClick={props.onChange}
+                color={props.color}
             />
             {!props.collapsed && <AccordionBody/>}
         </div>
@@ -26,14 +32,20 @@ export function Accordion(props: AccordionPropsType) {
 type AccordionTitlePropsType = {
     title: string
     collapsed: boolean
-    onClick: (collapsed: boolean) => void
+    onClick: () => void
+    color?: string
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
-    const onClickCollapsed = () => {props.onClick(!props.collapsed)}
+    const onClickCollapsed = (e: MouseEvent<HTMLDivElement>) => {
+        props.onClick()
+    }
 
     return (
-        <div onClick={onClickCollapsed}>
+        <div
+            onClick={onClickCollapsed}
+            style={{color: props.color ? props.color : 'black'}}
+        >
             <h3>{props.title}</h3>
         </div>
     )
@@ -41,13 +53,10 @@ function AccordionTitle(props: AccordionTitlePropsType) {
 
 function AccordionBody() {
     return (
-        <div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </div>
-
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
     )
 }

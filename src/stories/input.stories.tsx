@@ -9,53 +9,45 @@ export default {
 
 export const UncontrolledInput = () => <input/>
 export const TrackValueUncontrolledInput = () => {
-    const [value, setValue] = useState('')
 
+    const [value, setValue] = useState('')
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const actualValue = e.currentTarget.value
-        setValue(actualValue)
+        setValue(e.currentTarget.value)
     }
     return <><input value={value} onChange={onChange}/> = {value}</>
 }
-
-
 export const GetValueUncontrolledInputByButtonPress = () => {
-    const [value, setValue] = useState('')
 
+    const [value, setValue] = useState('')
     const inputRef = useRef<HTMLInputElement>(null)
     const save = () => {
         const el = inputRef.current as HTMLInputElement
         setValue(el.value)
     }
-
-
     return <><input ref={inputRef}/>
         <button
             onClick={save}>
             save
         </button>
         = actual value: {value}</>
-
-
 }
+
 
 export const ControlledInput = () => {
 
     const [parentValue, setParentValue] = useState('')
-    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
         setParentValue(e.currentTarget.value)
     }
-    return <input value={parentValue} onChange={onChange}/>
+    return <input value={parentValue} onChange={onChangeValue}/>
 }
-
 export const ControlledCheckbox = () => {
-    const [parentValue, setParentValue] = useState(true)
-    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setParentValue(e.currentTarget.checked)
+    const [parentChecked, setParentChecked] = useState<boolean>(false)
+    const onChangeChecked = (e: ChangeEvent<HTMLInputElement>) => {
+        setParentChecked(e.currentTarget.checked)
     }
-    return <input type='checkbox' checked={parentValue} onChange={onChange}/>
+    return <input type="checkbox" checked={parentChecked} onChange={onChangeChecked}/>
 }
-
 export const ControlledSelect = () => {
     const [parentValue, setParentValue] = useState<string | undefined>(undefined)
     const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -68,6 +60,7 @@ export const ControlledSelect = () => {
         <option value="3">Kiev</option>
     </select>
 }
+
 
 export const ControlledInputWithFixedValue = () => <input value={'it-inkubator.by'}/>
 

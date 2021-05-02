@@ -45,7 +45,7 @@ export function UncontrolledOnOff(props: PropsType) {
             </div>
             <div style={offStyle} onClick={offClicked}>Off
             </div>
-            <div style={indicatorStyle}></div>
+            <div style={indicatorStyle} />
         </div>
     )
 }
