@@ -6,6 +6,7 @@ import {UncontrolledAccordion} from './components/UncontrolledAccordion/Uncontro
 import {Accordion, ItemsType} from './components/Accordion/ Accordion';
 import {OnOff} from './components/OnOff/OnOff';
 import {UncontrolledOnOff} from './components/UnconrolledOnOff/UncontrolledOnOff';
+import {Select} from './components/Select/Select';
 
 function App() {
 
@@ -18,6 +19,11 @@ function App() {
         {title: 'Pavel', value: 2},
         {title: 'Olga', value: 3},
         {title: 'Irina', value: 4}
+    ])
+    const [selectValue, setSelectValue] = useState<ItemsType[]>([
+        {title: 'Minsk', value: 1},
+        {title: 'Moscow', value: 2},
+        {title: 'Kiev', value: 3},
     ])
 
     return (
@@ -51,10 +57,13 @@ function App() {
                     onChange={() => {
                         setAccordionCollapsed(!accordionCollapsed)
                     }}
-
-                    /*items={itemsValue}*/
                     items={itemsValue}
-                    onClick={() => {setItemsValue(itemsValue)}}
+                    onClick={() => setItemsValue(itemsValue)}
+                />
+                <Select
+                    value={selectValue}
+                    onChange={() => setSelectValue(selectValue)}
+                    items={selectValue}
                 />
 
             </div>
