@@ -13,7 +13,12 @@ function App() {
     const [switchUncOn, setSwitchUncOn] = useState(false)
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
-    const [itemsValue, setItemsValue] = useState<ItemsType[]>([])
+    const [itemsValue, setItemsValue] = useState<ItemsType[]>([
+        {title: 'Marta', value: 1},
+        {title: 'Pavel', value: 2},
+        {title: 'Olga', value: 3},
+        {title: 'Irina', value: 4}
+    ])
 
     return (
         <div className="app">
@@ -34,7 +39,8 @@ function App() {
                 </h1>
 
                 <OnOff value={switchOn}
-                       onClick={setSwitchOn}/>
+                       onClick={setSwitchOn}
+                />
                 <Rating
                     value={ratingValue}
                     onClick={setRatingValue}
@@ -45,9 +51,12 @@ function App() {
                     onChange={() => {
                         setAccordionCollapsed(!accordionCollapsed)
                     }}
+
+                    /*items={itemsValue}*/
                     items={itemsValue}
                     onClick={() => {setItemsValue(itemsValue)}}
                 />
+
             </div>
         </div>
     );

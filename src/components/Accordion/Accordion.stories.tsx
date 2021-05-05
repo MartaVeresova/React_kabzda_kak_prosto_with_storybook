@@ -3,6 +3,7 @@ import {action} from '@storybook/addon-actions';
 import {Accordion, AccordionPropsType} from './ Accordion';
 import {Story} from '@storybook/react';
 
+
 const GetCategoryObj = (categoryName: string) => ({
     table: {
         category: categoryName
@@ -34,8 +35,8 @@ const callbacksProps = {
     onChange: callback,
     onClick: onClickCallback
 }
-export const MenuCollapsedMode = Template.bind({});
-MenuCollapsedMode.args = {
+export const UsersCollapsedMode = Template.bind({});
+UsersCollapsedMode.args = {
     ...callbacksProps,
     titleValue: 'Menu',
     collapsed: true,
@@ -74,4 +75,51 @@ export const ModeChanging: Story<AccordionPropsType> = (args) => {
 ModeChanging.args = {
     titleValue: 'Users',
 }
+
+/*export default {
+    title: 'Accordion',
+    component: Accordion,
+}
+
+const callback = action('accordion mode change event fired')
+const onClickCallback = action('some item was clicked')
+
+export const MenuCollapsedMode = () => <Accordion
+    titleValue="Menu"
+    collapsed={true}
+    onChange={callback}
+    items={[]}
+    onClick={onClickCallback}
+/>
+export const UsersUncollapsedMode = () => <Accordion
+    titleValue="Users"
+    collapsed={false}
+    onChange={callback}
+    items={[
+        {title: 'Marta', value: 1},
+        {title: 'Pavel', value: 2},
+        {title: 'Olga', value: 3},
+        {title: 'Irina', value: 4}
+    ]}
+    onClick={onClickCallback}
+/>
+
+export const ModeChanging = () => {
+    const [value, setValue] = useState<boolean>(true)
+    return <Accordion
+        titleValue="Menu"
+        collapsed={value}
+        onChange={() => setValue(!value)}
+        items={[
+            {title: 'Marta', value: 1},
+            {title: 'Pavel', value: 2},
+            {title: 'Olga', value: 3},
+            {title: 'Irina', value: 4}
+        ]}
+        onClick={onClickCallback}
+    />
+}*/
+
+
+
 

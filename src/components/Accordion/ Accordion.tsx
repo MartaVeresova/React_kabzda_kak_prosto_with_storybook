@@ -23,10 +23,13 @@ export function Accordion(props: AccordionPropsType) {
             <AccordionTitle
                 title={props.titleValue}
                 collapsed={props.collapsed}
-                onClick={props.onChange}
+                onChange={props.onChange}
                 color={props.color}
             />
-            {!props.collapsed && <AccordionBody items={props.items} onClick={props.onClick}/>}
+            {!props.collapsed && <AccordionBody
+                items={props.items}
+                onClick={props.onClick}
+            />}
         </div>
     )
 }
@@ -35,13 +38,13 @@ export function Accordion(props: AccordionPropsType) {
 type AccordionTitlePropsType = {
     title: string
     collapsed: boolean
-    onClick: () => void
+    onChange: () => void
     color?: string
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     const onClickCollapsed = (e: MouseEvent<HTMLDivElement>) => {
-        props.onClick()
+        props.onChange()
     }
 
     return (
@@ -63,9 +66,9 @@ function AccordionBody(props: AccordionBodyPropsType) {
     return (
         <ul>
             {
-                props.items.map((i, index) => <li onClick={() => {
+                props.items.map((i, index) => <li key={index} onClick={() => {
                     props.onClick(i.value)
-                }} key={index}>{i.title}</li>)
+                }}>{i.title}</li>)
             }
         </ul>
     )
