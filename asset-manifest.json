@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/React_kabzda_kak_prosto_with_storybook/static/css/main.88d8da05.chunk.css",
+    "main.js": "/React_kabzda_kak_prosto_with_storybook/static/js/main.34a8ced1.chunk.js",
+    "main.js.map": "/React_kabzda_kak_prosto_with_storybook/static/js/main.34a8ced1.chunk.js.map",
+    "runtime-main.js": "/React_kabzda_kak_prosto_with_storybook/static/js/runtime-main.472c4619.js",
+    "runtime-main.js.map": "/React_kabzda_kak_prosto_with_storybook/static/js/runtime-main.472c4619.js.map",
+    "static/js/2.fa3c8897.chunk.js": "/React_kabzda_kak_prosto_with_storybook/static/js/2.fa3c8897.chunk.js",
+    "static/js/2.fa3c8897.chunk.js.map": "/React_kabzda_kak_prosto_with_storybook/static/js/2.fa3c8897.chunk.js.map",
+    "static/js/3.51e011aa.chunk.js": "/React_kabzda_kak_prosto_with_storybook/static/js/3.51e011aa.chunk.js",
+    "static/js/3.51e011aa.chunk.js.map": "/React_kabzda_kak_prosto_with_storybook/static/js/3.51e011aa.chunk.js.map",
+    "index.html": "/React_kabzda_kak_prosto_with_storybook/index.html",
+    "static/css/main.88d8da05.chunk.css.map": "/React_kabzda_kak_prosto_with_storybook/static/css/main.88d8da05.chunk.css.map",
+    "static/js/2.fa3c8897.chunk.js.LICENSE.txt": "/React_kabzda_kak_prosto_with_storybook/static/js/2.fa3c8897.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.472c4619.js",
+    "static/js/2.fa3c8897.chunk.js",
+    "static/css/main.88d8da05.chunk.css",
+    "static/js/main.34a8ced1.chunk.js"
+  ]
+}
