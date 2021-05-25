@@ -3,13 +3,12 @@ import './App.css';
 import {Rating, RatingValueType} from './components/Rating/Rating';
 import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
-import {Accordion, ItemsType} from './components/Accordion/ Accordion';
+import {Accordion, ItemsType} from './components/Accordion/Accordion';
 import {OnOff} from './components/OnOff/OnOff';
 import {UncontrolledOnOff} from './components/UnconrolledOnOff/UncontrolledOnOff';
 import {Select} from './components/Select/Select';
 
-function App() {
-
+function AppSecret() {
     const [switchOn, setSwitchOn] = useState(false)
     const [switchUncOn, setSwitchUncOn] = useState(false)
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -70,5 +69,7 @@ function App() {
         </div>
     );
 }
+
+const App = React.memo(AppSecret)
 
 export default App;

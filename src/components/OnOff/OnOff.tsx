@@ -5,7 +5,7 @@ type OnOffPropsType = {
     onClick: (value: boolean) => void
 }
 
-export function OnOff(props: OnOffPropsType) {
+function OnOffSecret(props: OnOffPropsType) {
 
     const onStyleControlled = {
         width: '30px',
@@ -49,6 +49,8 @@ export function OnOff(props: OnOffPropsType) {
         </div>
     )
 }
+
+export const OnOff = React.memo(OnOffSecret)
 
 
 

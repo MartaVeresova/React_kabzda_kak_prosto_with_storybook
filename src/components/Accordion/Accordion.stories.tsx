@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {action} from '@storybook/addon-actions';
-import {Accordion, AccordionPropsType} from './ Accordion';
+import {Accordion, AccordionPropsType} from './Accordion';
 import {Story} from '@storybook/react';
 
 
@@ -57,6 +57,7 @@ UsersUncollapsedMode.args = {
     ],
     onClick: (onClickCallback)
 }
+
 
 export const ModeChanging: Story<AccordionPropsType> = (args) => {
     const [value, setValue] = useState<boolean>(true)
