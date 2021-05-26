@@ -17,7 +17,7 @@ export type AccordionPropsType = {
     color?: string
 }
 
-function AccordionSecret(props: AccordionPropsType) {
+function AccordionMemo(props: AccordionPropsType) {
     return (
         <div>
             <AccordionTitle
@@ -33,7 +33,7 @@ function AccordionSecret(props: AccordionPropsType) {
         </div>
     )
 }
-export const Accordion = React.memo(AccordionSecret)
+export const Accordion = React.memo(AccordionMemo)
 
 
 type AccordionTitlePropsType = {
@@ -43,7 +43,7 @@ type AccordionTitlePropsType = {
     color?: string
 }
 
-function AccordionTitleSecret(props: AccordionTitlePropsType) {
+function AccordionTitleMemo(props: AccordionTitlePropsType) {
     const onClickCollapsed = (e: MouseEvent<HTMLDivElement>) => {
         props.onChange()
     }
@@ -57,14 +57,14 @@ function AccordionTitleSecret(props: AccordionTitlePropsType) {
         </div>
     )
 }
-const AccordionTitle = React.memo(AccordionTitleSecret)
+const AccordionTitle = React.memo(AccordionTitleMemo)
 
 type AccordionBodyPropsType = {
     items: ItemsType[]
     onClick: (value: any) => void
 }
 
-function AccordionBodySecret(props: AccordionBodyPropsType) {
+function AccordionBodyMemo(props: AccordionBodyPropsType) {
     return (
         <ul>
             {
@@ -76,4 +76,4 @@ function AccordionBodySecret(props: AccordionBodyPropsType) {
     )
 }
 
-const AccordionBody = React.memo(AccordionBodySecret)
+const AccordionBody = React.memo(AccordionBodyMemo)

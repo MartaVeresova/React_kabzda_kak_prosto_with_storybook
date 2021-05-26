@@ -5,7 +5,7 @@ type PropsType = {
     defaultOn?: boolean
 }
 
-function UncontrolledOnOffSecret(props: PropsType) {
+function UncontrolledOnOff(props: PropsType) {
 
     const [on, setOn] = useState(props.defaultOn ? props.defaultOn : false)
 
@@ -49,5 +49,4 @@ function UncontrolledOnOffSecret(props: PropsType) {
         </div>
     )
 }
-export const UncontrolledOnOff = React.memo(UncontrolledOnOffSecret)
 
