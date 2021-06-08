@@ -1,5 +1,5 @@
 import React from 'react';
-import {UncontrolledAccordion} from './UncontrolledAccordion';
+import UncontrolledAccordion from './UncontrolledAccordion';
 
 
 export default {

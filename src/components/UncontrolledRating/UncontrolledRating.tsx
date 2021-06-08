@@ -6,7 +6,7 @@ export type UncontrolledRatingPropsType = {
     onChange: (value: RatingValueType) => void
 }
 
-function UncontrolledRating(props: UncontrolledRatingPropsType) {
+export function UncontrolledRating(props: UncontrolledRatingPropsType) {
     const [value, setValue] = useState<RatingValueType>(props.defaultValue ? props.defaultValue : 0)
 
     return (

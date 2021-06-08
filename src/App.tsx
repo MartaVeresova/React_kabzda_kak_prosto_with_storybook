@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from './components/Rating/Rating';
-import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
-import {UncontrolledAccordion} from './components/UncontrolledAccordion/UncontrolledAccordion';
+import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {Accordion, ItemsType} from './components/Accordion/Accordion';
 import {OnOff} from './components/OnOff/OnOff';
-import {UncontrolledOnOff} from './components/UnconrolledOnOff/UncontrolledOnOff';
+import UncontrolledOnOff from './components/UnconrolledOnOff/UncontrolledOnOff';
 import {Select} from './components/Select/Select';
+import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRating';
 
-function AppSecret() {
+function AppMemo() {
     const [switchOn, setSwitchOn] = useState(false)
     const [switchUncOn, setSwitchUncOn] = useState(false)
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -70,6 +70,6 @@ function AppSecret() {
     );
 }
 
-const App = React.memo(AppSecret)
+const App = React.memo(AppMemo)
 
 export default App;

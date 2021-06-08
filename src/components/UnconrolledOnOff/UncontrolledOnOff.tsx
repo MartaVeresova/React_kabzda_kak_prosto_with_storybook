@@ -49,4 +49,4 @@ function UncontrolledOnOff(props: PropsType) {
         </div>
     )
 }
-
+export default UncontrolledOnOff

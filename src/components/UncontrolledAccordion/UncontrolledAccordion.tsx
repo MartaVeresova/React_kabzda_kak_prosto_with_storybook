@@ -51,3 +51,4 @@ function AccordionBody() {
     )
 }
 
+export default UncontrolledAccordion
