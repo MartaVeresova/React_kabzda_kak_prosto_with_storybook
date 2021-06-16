@@ -31,7 +31,6 @@ export const SimpleExample = () => {
     </>
 }
 
-
 export const SetTimeoutExample = () => {
     console.log('SetTimeoutExample')
     const [fake, setFake] = useState(1) //
@@ -39,16 +38,26 @@ export const SetTimeoutExample = () => {
 
 
     useEffect(() => {
-        setTimeout(() => {
+
+        const timeoutId = setTimeout(() => {
             console.log('setTimeout')
             document.title = counter.toString()
         }, 1000)
+
+        return () => {
+            clearTimeout(timeoutId)
+        }
     }, [counter])
 
     useEffect(() => {
-        setInterval(() => {
-            setCounter(state => state +1)
+
+        const intervalId = setInterval(() => {
+            setCounter(state => state + 1)
         }, 1000)
+
+        return () => {
+            clearInterval(intervalId)
+        }
     }, [])
 
 
@@ -56,5 +65,51 @@ export const SetTimeoutExample = () => {
         Hello, counter: {counter} - fake: {fake}
         {/*<button onClick={() => setFake(fake + 1)}>fake+</button>*/}
         {/*<button onClick={() => setCounter(counter + 1)}>counter+</button>*/}
+    </>
+}
+
+export const ResetEffectExample = () => {
+    const [counter, setCounter] = useState(1)
+
+    console.log('Component rendered')
+
+    useEffect(() => {
+        console.log('Effect occurred ' + counter)
+
+
+        return () => {
+            console.log('reset Effect')
+        }
+    }, [counter])
+
+    return <>
+        Hello, counter: {counter}
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+    </>
+}
+
+export const KeysTrackerExample = () => {
+    const [text, setText] = useState('')
+    console.log('Component rendered with ' + text)
+
+    useEffect(() => {
+
+            const handler = (e: KeyboardEvent) => {
+                console.log(e.key)
+                setText(text + e.key)
+            }
+
+            window.addEventListener('keypress', handler)
+
+            return () => {
+                console.log('RESET EFFECT')
+                window.removeEventListener('keypress', handler)
+            }
+
+        }, [text]
+    )
+
+    return <>
+        Typed text: {text}
     </>
 }
